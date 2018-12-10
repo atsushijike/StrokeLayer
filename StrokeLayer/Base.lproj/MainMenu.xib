@@ -695,11 +695,9 @@
                         <rect key="frame" x="0.0" y="50" width="480" height="340"/>
                     </customView>
                     <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="SCR-hH-0vl">
-                        <rect key="frame" x="184" y="13" width="223" height="20"/>
+                        <rect key="frame" x="164" y="13" width="243" height="20"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="16" id="2Wi-PC-uxd"/>
-                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="219" id="Aq2-TD-JOo"/>
-                            <constraint firstAttribute="width" constant="219" id="wdg-7t-s7N"/>
                         </constraints>
                         <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="1" doubleValue="0.5" tickMarkPosition="above" sliderType="linear" id="kNS-B9-sGM"/>
                         <connections>
@@ -709,6 +707,7 @@
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="eTz-iX-Qpd">
                         <rect key="frame" x="411" y="14" width="23" height="18"/>
                         <constraints>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="19" id="PNO-JU-TTy"/>
                             <constraint firstAttribute="height" constant="18" id="bw1-HF-Epb"/>
                         </constraints>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="0.5" id="Rrb-Zt-MDR">
@@ -718,8 +717,9 @@
                         </textFieldCell>
                     </textField>
                     <popUpButton horizontalHuggingPriority="249" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zeA-0F-uwr">
-                        <rect key="frame" x="54" y="9" width="127" height="26"/>
+                        <rect key="frame" x="34" y="9" width="127" height="26"/>
                         <constraints>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="122" id="Dfi-96-8hQ"/>
                             <constraint firstAttribute="height" constant="22" id="yyN-ov-Nl9"/>
                         </constraints>
                         <popUpButtonCell key="cell" type="push" title="Circle" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="8Fr-Hy-hMN" id="gEF-jy-w2F">
@@ -740,13 +740,13 @@
                     </popUpButton>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="eTz-iX-Qpd" secondAttribute="trailing" constant="48" id="1dE-Lp-YGJ"/>
+                    <constraint firstAttribute="trailing" secondItem="eTz-iX-Qpd" secondAttribute="trailing" constant="48" id="154-9r-Kz7"/>
                     <constraint firstItem="SCR-hH-0vl" firstAttribute="centerY" secondItem="zeA-0F-uwr" secondAttribute="centerY" id="5eE-kw-v77"/>
                     <constraint firstItem="eTz-iX-Qpd" firstAttribute="centerY" secondItem="SCR-hH-0vl" secondAttribute="centerY" id="8iG-lD-iaR"/>
                     <constraint firstAttribute="bottom" secondItem="zeA-0F-uwr" secondAttribute="bottom" constant="12" id="MZm-SD-HFu"/>
                     <constraint firstItem="SCR-hH-0vl" firstAttribute="leading" secondItem="zeA-0F-uwr" secondAttribute="trailing" constant="8" id="O6c-9f-yWd"/>
                     <constraint firstItem="BZi-lV-JMR" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" id="ciM-4K-s5E"/>
-                    <constraint firstItem="zeA-0F-uwr" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="56" id="cuK-0A-SQg"/>
+                    <constraint firstItem="zeA-0F-uwr" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="36" id="cuK-0A-SQg"/>
                     <constraint firstAttribute="bottom" secondItem="BZi-lV-JMR" secondAttribute="bottom" constant="50" id="dJp-zA-BQg"/>
                     <constraint firstItem="eTz-iX-Qpd" firstAttribute="leading" secondItem="SCR-hH-0vl" secondAttribute="trailing" constant="8" symbolic="YES" id="eJE-B2-S5A"/>
                     <constraint firstItem="BZi-lV-JMR" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" id="hDi-ff-flw"/>

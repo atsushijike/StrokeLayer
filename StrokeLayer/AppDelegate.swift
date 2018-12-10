@@ -31,7 +31,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBAction func percentSliderValueChanged(_ sender: NSSlider) {
         let value = sender.floatValue
         view.ratio = CGFloat(value)
-        ratioLabel.stringValue = String(value)
+        ratioLabel.stringValue = String(floor(value * 10) / 10)
     }
     
     @IBAction func popUpMenuSelected(_ sender: NSPopUpButton) {
