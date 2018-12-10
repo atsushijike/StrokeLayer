@@ -1,7 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11134"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14460.31"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -10,9 +11,12 @@
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
-        <customObject id="-3" userLabel="Application" customClass="NSApplication"/>
-        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider="target">
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="StrokeLayer" customModuleProvider="target">
             <connections>
+                <outlet property="canvasView" destination="Na7-9N-Sgb" id="l9H-1W-zkC"/>
+                <outlet property="ratioLabel" destination="eTz-iX-Qpd" id="7Co-Od-Jsx"/>
+                <outlet property="view" destination="BZi-lV-JMR" id="Ziw-oj-Ewu"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>
@@ -679,14 +683,99 @@
             </items>
         </menu>
         <window title="StrokeLayer" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
-            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="480" height="360"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+            <rect key="contentRect" x="335" y="390" width="480" height="390"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
             <view key="contentView" wantsLayer="YES" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
+                <rect key="frame" x="0.0" y="0.0" width="480" height="390"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="BZi-lV-JMR" customClass="View" customModule="StrokeLayer" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="50" width="480" height="340"/>
+                    </customView>
+                    <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="SCR-hH-0vl">
+                        <rect key="frame" x="184" y="13" width="223" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="16" id="2Wi-PC-uxd"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="219" id="Aq2-TD-JOo"/>
+                            <constraint firstAttribute="width" constant="219" id="wdg-7t-s7N"/>
+                        </constraints>
+                        <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="1" doubleValue="0.5" tickMarkPosition="above" sliderType="linear" id="kNS-B9-sGM"/>
+                        <connections>
+                            <action selector="percentSliderValueChanged:" target="Voe-Tx-rLC" id="fak-Gg-3t8"/>
+                        </connections>
+                    </slider>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="eTz-iX-Qpd">
+                        <rect key="frame" x="411" y="14" width="23" height="18"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="18" id="bw1-HF-Epb"/>
+                        </constraints>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="0.5" id="Rrb-Zt-MDR">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <popUpButton horizontalHuggingPriority="249" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zeA-0F-uwr">
+                        <rect key="frame" x="54" y="9" width="127" height="26"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="22" id="yyN-ov-Nl9"/>
+                        </constraints>
+                        <popUpButtonCell key="cell" type="push" title="Circle" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="8Fr-Hy-hMN" id="gEF-jy-w2F">
+                            <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="menu"/>
+                            <menu key="menu" id="vjD-j2-R4t">
+                                <items>
+                                    <menuItem title="Circle" state="on" id="8Fr-Hy-hMN"/>
+                                    <menuItem title="Rounded" tag="1" id="F8s-xn-WBT"/>
+                                    <menuItem title="Bell" tag="2" id="CMf-KP-fqM"/>
+                                    <menuItem title="Free Hand" tag="3" id="Zyg-lh-Gs7"/>
+                                </items>
+                            </menu>
+                        </popUpButtonCell>
+                        <connections>
+                            <action selector="popUpMenuSelected:" target="Voe-Tx-rLC" id="mXg-8I-jCp"/>
+                        </connections>
+                    </popUpButton>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="eTz-iX-Qpd" secondAttribute="trailing" constant="48" id="1dE-Lp-YGJ"/>
+                    <constraint firstItem="SCR-hH-0vl" firstAttribute="centerY" secondItem="zeA-0F-uwr" secondAttribute="centerY" id="5eE-kw-v77"/>
+                    <constraint firstItem="eTz-iX-Qpd" firstAttribute="centerY" secondItem="SCR-hH-0vl" secondAttribute="centerY" id="8iG-lD-iaR"/>
+                    <constraint firstAttribute="bottom" secondItem="zeA-0F-uwr" secondAttribute="bottom" constant="12" id="MZm-SD-HFu"/>
+                    <constraint firstItem="SCR-hH-0vl" firstAttribute="leading" secondItem="zeA-0F-uwr" secondAttribute="trailing" constant="8" id="O6c-9f-yWd"/>
+                    <constraint firstItem="BZi-lV-JMR" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" id="ciM-4K-s5E"/>
+                    <constraint firstItem="zeA-0F-uwr" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="56" id="cuK-0A-SQg"/>
+                    <constraint firstAttribute="bottom" secondItem="BZi-lV-JMR" secondAttribute="bottom" constant="50" id="dJp-zA-BQg"/>
+                    <constraint firstItem="eTz-iX-Qpd" firstAttribute="leading" secondItem="SCR-hH-0vl" secondAttribute="trailing" constant="8" symbolic="YES" id="eJE-B2-S5A"/>
+                    <constraint firstItem="BZi-lV-JMR" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" id="hDi-ff-flw"/>
+                    <constraint firstAttribute="trailing" secondItem="BZi-lV-JMR" secondAttribute="trailing" id="t1v-H4-LgE"/>
+                </constraints>
             </view>
+            <point key="canvasLocation" x="139" y="-94"/>
+        </window>
+        <window title="Free Hand" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" frameAutosaveName="" animationBehavior="default" id="XJG-3Y-ZhL">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="283" y="305" width="270" height="270"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
+            <view key="contentView" id="UFr-ao-d1Z">
+                <rect key="frame" x="0.0" y="0.0" width="270" height="270"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="Na7-9N-Sgb" customClass="CanvasView" customModule="StrokeLayer" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="270" height="270"/>
+                    </customView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Na7-9N-Sgb" firstAttribute="leading" secondItem="UFr-ao-d1Z" secondAttribute="leading" id="7hv-Qe-1nG"/>
+                    <constraint firstAttribute="trailing" secondItem="Na7-9N-Sgb" secondAttribute="trailing" id="ZFs-qA-1la"/>
+                    <constraint firstItem="Na7-9N-Sgb" firstAttribute="top" secondItem="UFr-ao-d1Z" secondAttribute="top" id="f3B-o5-JVo"/>
+                    <constraint firstAttribute="bottom" secondItem="Na7-9N-Sgb" secondAttribute="bottom" id="gQS-Ue-wAc"/>
+                </constraints>
+            </view>
+            <point key="canvasLocation" x="583" y="-154"/>
         </window>
     </objects>
 </document>

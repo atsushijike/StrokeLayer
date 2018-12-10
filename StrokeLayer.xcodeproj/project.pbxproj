@@ -7,18 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6B6E96B521B111A4000AC664 /* CGPath+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6E96B421B111A4000AC664 /* CGPath+Extension.swift */; };
 		6BA85A2F217EB03100FAEDF2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA85A2E217EB03100FAEDF2 /* AppDelegate.swift */; };
 		6BA85A31217EB03500FAEDF2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BA85A30217EB03500FAEDF2 /* Assets.xcassets */; };
 		6BA85A34217EB03500FAEDF2 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BA85A32217EB03500FAEDF2 /* MainMenu.xib */; };
+		6BA85A3D217EB07D00FAEDF2 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA85A3C217EB07D00FAEDF2 /* View.swift */; };
+		6BB445A521B666930095A94C /* PocketSVG.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BB445A421B666930095A94C /* PocketSVG.framework */; };
+		6BB445A821B668CF0095A94C /* bell.svg in Resources */ = {isa = PBXBuildFile; fileRef = 6BB445A721B668CE0095A94C /* bell.svg */; };
+		6BB445CE21B79AFE0095A94C /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB445CD21B79AFE0095A94C /* CanvasView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6B6E96B421B111A4000AC664 /* CGPath+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPath+Extension.swift"; sourceTree = "<group>"; };
 		6BA85A2B217EB03100FAEDF2 /* StrokeLayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StrokeLayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BA85A2E217EB03100FAEDF2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6BA85A30217EB03500FAEDF2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6BA85A33217EB03500FAEDF2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		6BA85A35217EB03500FAEDF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6BA85A36217EB03500FAEDF2 /* StrokeLayer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StrokeLayer.entitlements; sourceTree = "<group>"; };
+		6BA85A3C217EB07D00FAEDF2 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		6BB445A421B666930095A94C /* PocketSVG.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PocketSVG.framework; path = Carthage/Build/Mac/PocketSVG.framework; sourceTree = "<group>"; };
+		6BB445A721B668CE0095A94C /* bell.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = bell.svg; sourceTree = "<group>"; };
+		6BB445CD21B79AFE0095A94C /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BB445A521B666930095A94C /* PocketSVG.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -37,6 +48,7 @@
 			children = (
 				6BA85A2D217EB03100FAEDF2 /* StrokeLayer */,
 				6BA85A2C217EB03100FAEDF2 /* Products */,
+				6BB445A321B666930095A94C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -52,12 +64,24 @@
 			isa = PBXGroup;
 			children = (
 				6BA85A2E217EB03100FAEDF2 /* AppDelegate.swift */,
+				6BA85A3C217EB07D00FAEDF2 /* View.swift */,
+				6BB445CD21B79AFE0095A94C /* CanvasView.swift */,
+				6B6E96B421B111A4000AC664 /* CGPath+Extension.swift */,
 				6BA85A30217EB03500FAEDF2 /* Assets.xcassets */,
+				6BB445A721B668CE0095A94C /* bell.svg */,
 				6BA85A32217EB03500FAEDF2 /* MainMenu.xib */,
 				6BA85A35217EB03500FAEDF2 /* Info.plist */,
 				6BA85A36217EB03500FAEDF2 /* StrokeLayer.entitlements */,
 			);
 			path = StrokeLayer;
+			sourceTree = "<group>";
+		};
+		6BB445A321B666930095A94C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6BB445A421B666930095A94C /* PocketSVG.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -70,6 +94,7 @@
 				6BA85A27217EB03100FAEDF2 /* Sources */,
 				6BA85A28217EB03100FAEDF2 /* Frameworks */,
 				6BA85A29217EB03100FAEDF2 /* Resources */,
+				6BB445A621B666CB0095A94C /* Run Carthage Script */,
 			);
 			buildRules = (
 			);
@@ -92,6 +117,7 @@
 				TargetAttributes = {
 					6BA85A2A217EB03100FAEDF2 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1010;
 					};
 				};
 			};
@@ -119,17 +145,43 @@
 			buildActionMask = 2147483647;
 			files = (
 				6BA85A31217EB03500FAEDF2 /* Assets.xcassets in Resources */,
+				6BB445A821B668CF0095A94C /* bell.svg in Resources */,
 				6BA85A34217EB03500FAEDF2 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6BB445A621B666CB0095A94C /* Run Carthage Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/Mac/PocketSVG.framework",
+			);
+			name = "Run Carthage Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		6BA85A27217EB03100FAEDF2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BA85A3D217EB07D00FAEDF2 /* View.swift in Sources */,
+				6B6E96B521B111A4000AC664 /* CGPath+Extension.swift in Sources */,
+				6BB445CE21B79AFE0095A94C /* CanvasView.swift in Sources */,
 				6BA85A2F217EB03100FAEDF2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -268,6 +320,10 @@
 				CODE_SIGN_ENTITLEMENTS = StrokeLayer/StrokeLayer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = StrokeLayer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -275,7 +331,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = jp.co.yumemi.StrokeLayer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -286,6 +342,10 @@
 				CODE_SIGN_ENTITLEMENTS = StrokeLayer/StrokeLayer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = StrokeLayer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -293,7 +353,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = jp.co.yumemi.StrokeLayer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
